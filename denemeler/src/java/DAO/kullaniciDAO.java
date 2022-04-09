@@ -25,6 +25,17 @@ public class kullaniciDAO extends DBConnection {
         }
     }
 
+    public void update(kullanici k) {
+        try {
+            Statement st = this.connect().createStatement();
+            String query = "update category set kuladi='" + k.getKuladi() + "' where kullaniciid= " + k.getKullaniciid();
+            st.executeUpdate(query);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public void delete(kullanici k) {
         try {
             Statement st = this.connect().createStatement();

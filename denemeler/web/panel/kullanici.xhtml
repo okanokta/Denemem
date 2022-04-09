@@ -23,7 +23,7 @@
             Mail<h:inputText value="#{kullaniciBean.entity.mail}" />
             <hr />
             <h:commandButton rendered="#{kullaniciBean.entity.kullaniciid==0}" action="#{kullaniciBean.create()}" value="Create" />
-
+            <h:commandButton rendered="#{categoryBean.entity.kullaniciid!=0}" action="#{kullaniciBean.update()}" value="Update" />
 
         </h:form>
         <hr />
@@ -62,6 +62,7 @@
                 <h:column>
                     <f:facet name="header">ADMINISTRATION</f:facet>
                     <h:commandButton action="#{kullaniciBean.delete(entity)}" value="Delete" />
+                    <h:commandButton action="#{kullaniciBean.setEntity(entity)}" value="Update" />
                 </h:column>
             </h:dataTable>
         </h:form>

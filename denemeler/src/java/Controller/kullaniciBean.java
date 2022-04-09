@@ -36,6 +36,11 @@ public class kullaniciBean implements Serializable {
         entity = new kullanici();
     }
 
+    public void update() {
+        this.getDao().update(entity);
+        this.entity = new kullanici();
+    }
+
     public void delete(kullanici k) {
         this.getDao().delete(k);
         entity = new kullanici();
